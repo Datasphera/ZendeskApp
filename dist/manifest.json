@@ -1,9 +1,9 @@
 {
-  "name": "Zendesk React App Boilerplate",
+  "name": "Exacctly app",
   "author": {
-    "name": "Mathias V. Nielsen",
-    "email": "mn@cloudhuset.dk",
-    "url": "https://cloudhuset.dk"
+    "name": "Datasphera",
+    "email": "contact@datasphera.com",
+    "url": "https://www.datasphera.com"
   },
   "defaultLocale": "en",
   "private": true,
@@ -12,6 +12,20 @@
       "ticket_sidebar": "assets/index.html"
     }
   },
+  "parameters": [
+    {
+      "name": "companyName",
+      "type": "text",
+      "required": true,
+      "default": "datasphera"
+    },
+    {
+      "name": "platformUrl",
+      "type": "text",
+      "required": true,
+      "default": "https://app.exacctly.com"
+    }
+  ],
   "version": "1.0",
   "frameworkVersion": "2.0"
 }

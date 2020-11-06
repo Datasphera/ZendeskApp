@@ -1,0 +1,66 @@
+.suggestion {
+    width: 95%;
+    max-height: 200px;
+    background-color: #f8f9f9;
+    border: solid 1px #c2c8cc;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.ticket-header {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    align-self: flex-start;
+}
+
+.ticket-name {
+    margin-left: 10px;
+    font-size: 12px;
+    flex-grow: 5;
+}
+
+.clipboard-icon {
+    align-self: center;
+    margin-right: 10px;
+}
+
+.clipboard-icon:hover {
+    color: #337fbd;
+    cursor: pointer;
+}
+
+.ticket-body {
+    padding: 5px;
+    font-size: 12px;
+    width: 90%;
+    overflow: hidden;
+}
+
+a {
+    color: #337fbd;
+    text-decoration: none;
+}
+
+  .question-section {
+      border-bottom: solid 1px #d8dcde;
+      padding-bottom: 10px;
+  }
+
+  .answer-section {
+      padding-top: 10px;
+  }
+
+  .suggested-answer {
+    font-size: 12px;
+    flex-grow: 5;
+    margin-right: 20px;
+    text-align: right;
+  }
+
+  .push-right {
+    margin-left: 15px;
+  }
