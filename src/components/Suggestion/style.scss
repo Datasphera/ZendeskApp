@@ -1,6 +1,5 @@
 .suggestion {
     width: 95%;
-    max-height: 200px;
     background-color: #f8f9f9;
     border: solid 1px #c2c8cc;
     margin: auto;
@@ -45,22 +44,22 @@ a {
     text-decoration: none;
 }
 
-  .question-section {
-      border-bottom: solid 1px #d8dcde;
-      padding-bottom: 10px;
-  }
+.question-section {
+    border-bottom: solid 1px #d8dcde;
+    padding-bottom: 10px;
+}
 
-  .answer-section {
-      padding-top: 10px;
-  }
+.answer-section {
+    padding-top: 10px;
+}
 
-  .suggested-answer {
-    font-size: 12px;
-    flex-grow: 5;
-    margin-right: 20px;
-    text-align: right;
-  }
+.suggested-answer {
+  font-size: 12px;
+  flex-grow: 5;
+  margin-right: 20px;
+  text-align: right;
+}
 
-  .push-right {
-    margin-left: 15px;
-  }
+.push-right {
+  margin-left: 15px;
+}

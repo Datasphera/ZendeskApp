@@ -14,16 +14,16 @@
   },
   "parameters": [
     {
-      "name": "companyName",
-      "type": "text",
-      "required": true,
-      "default": "datasphera"
-    },
-    {
       "name": "platformUrl",
       "type": "text",
       "required": true,
       "default": "https://app.exacctly.com"
+    },
+    {
+      "name": "secretKey",
+      "type": "text",
+      "required": true,
+      "default": "datasphera-demo-key"
     }
   ],
   "version": "1.0",

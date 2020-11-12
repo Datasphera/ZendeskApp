@@ -1,12 +1,13 @@
-import React from 'react'
-import './style.scss'
-import zafClient from '../../zafClient'
+import React from 'react';
+import './style.scss';
+import zafClient from '../../zafClient';
 import { ThemeProvider } from '@zendeskgarden/react-theming';
 import Suggestion from '../Suggestion';
 import { LG } from '@zendeskgarden/react-typography';
 import { Dots } from '@zendeskgarden/react-loaders';
 import { PALETTE } from '@zendeskgarden/react-theming';
 import { Row, Col } from '@zendeskgarden/react-grid';
+import { buildUrl } from './utility';
 
 const App = () => {
   const [suggestions, setSuggestions] = React.useState(null);
@@ -14,15 +15,20 @@ const App = () => {
   React.useEffect(async () => {
     zafClient.invoke('resize', { height: '320px' })
 
-    const data = await zafClient.get('ticket.id')
+    const metadata = await zafClient.metadata();
+    const context = await zafClient.context();
+    const data = await zafClient.get('ticket.id');
+
+    const platformUrl = metadata.settings["platformUrl"];
+    const secretKey = metadata.settings["secretKey"];
+    const subdomain = context.account.subdomain;
 
     var settings = {
-      url: 'https://2ae295c3e14a.ngrok.io/suggest/zendesk' + '/' + data['ticket.id'],
+      url: buildUrl(platformUrl, data['ticket.id'], subdomain, secretKey),
       type: 'GET',
       contentType: 'application/json',
     };
     zafClient.request(settings).then((res) => {
-      console.log(res);
       setSuggestions(res);
     });
   }, [])
