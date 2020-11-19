@@ -1,5 +1,6 @@
 {
   "app": {
+    "name": "Exacctly Zendesk Integration",
     "similar_tickets": "Similar tickets:",
     "suggested_reply": "Suggested reply"
   }

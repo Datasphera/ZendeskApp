@@ -1,27 +1,27 @@
 import React from 'react'
 import './style.scss'
-import { PALETTE } from '@zendeskgarden/react-theming';
-import { Avatar } from '@zendeskgarden/react-avatars';
-import { Tooltip } from '@zendeskgarden/react-tooltips';
-import { Span, LG, Ellipsis, Paragraph } from '@zendeskgarden/react-typography';
-import { Button, Anchor } from '@zendeskgarden/react-buttons';
-import { Row, Col } from '@zendeskgarden/react-grid';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { PALETTE } from '@zendeskgarden/react-theming'
+import { Avatar } from '@zendeskgarden/react-avatars'
+import { Tooltip } from '@zendeskgarden/react-tooltips'
+import { Span, LG, Ellipsis, Paragraph } from '@zendeskgarden/react-typography'
+import { Button, Anchor } from '@zendeskgarden/react-buttons'
+import { Row, Col } from '@zendeskgarden/react-grid'
+import {CopyToClipboard} from 'react-copy-to-clipboard'
 import zafClient from '../../zafClient'
 
 const Suggestion = (props) => {
-  const [expandQuestion, setExpandQuestion] = React.useState(false);
-  const [expandAnswer, setExpandAnswer] = React.useState(false);
+  const [expandQuestion, setExpandQuestion] = React.useState(false)
+  const [expandAnswer, setExpandAnswer] = React.useState(false)
 
   var getInitials = function (string) {
     var names = string.split(' '),
-        initials = names[0].substring(0, 1).toUpperCase();
+      initials = names[0].substring(0, 1).toUpperCase()
     
     if (names.length > 1) {
-        initials += names[names.length - 1].substring(0, 1).toUpperCase();
+      initials += names[names.length - 1].substring(0, 1).toUpperCase()
     }
-    return initials;
-  };
+    return initials
+  }
 
   return (
     <div className="suggestion shadow-dreamy">
@@ -54,7 +54,7 @@ const Suggestion = (props) => {
             size="small">
             <div>
               <CopyToClipboard text={props.response}>
-              <i className="far fa-clipboard clipboard-icon push-right"></i>
+                <i className="far fa-clipboard clipboard-icon push-right"></i>
               </CopyToClipboard>  
             </div>
           </Tooltip>
@@ -81,4 +81,4 @@ const Suggestion = (props) => {
     </div>)
 }
 
-export default Suggestion;
+export default Suggestion
