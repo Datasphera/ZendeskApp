@@ -3,8 +3,8 @@ import './style.scss'
 import { PALETTE } from '@zendeskgarden/react-theming'
 import { Avatar } from '@zendeskgarden/react-avatars'
 import { Tooltip } from '@zendeskgarden/react-tooltips'
-import { Span, LG, Ellipsis, Paragraph } from '@zendeskgarden/react-typography'
-import { Button, Anchor } from '@zendeskgarden/react-buttons'
+import { Ellipsis, Paragraph } from '@zendeskgarden/react-typography'
+import { Anchor } from '@zendeskgarden/react-buttons'
 import { Row, Col } from '@zendeskgarden/react-grid'
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import zafClient from '../../zafClient'
@@ -13,10 +13,10 @@ const Suggestion = (props) => {
   const [expandQuestion, setExpandQuestion] = React.useState(false)
   const [expandAnswer, setExpandAnswer] = React.useState(false)
 
-  var getInitials = function (string) {
-    var names = string.split(' '),
+  const getInitials = function (string) {
+    let names = string.split(' '),
       initials = names[0].substring(0, 1).toUpperCase()
-    
+
     if (names.length > 1) {
       initials += names[names.length - 1].substring(0, 1).toUpperCase()
     }
@@ -38,10 +38,10 @@ const Suggestion = (props) => {
         <div className="ticket-body">
           <Row><Col>
             {!expandQuestion && (
-              <Ellipsis onClick={() => setExpandQuestion(true)}>{props.question}</Ellipsis>     
+              <Ellipsis onClick={() => setExpandQuestion(true)}>{props.question}</Ellipsis>
             )}
             {expandQuestion && (
-              <Paragraph onClick={() => setExpandQuestion(false)}>{props.question}</Paragraph>     
+              <Paragraph onClick={() => setExpandQuestion(false)}>{props.question}</Paragraph>
             )}
           </Col></Row>
         </div>
@@ -54,8 +54,8 @@ const Suggestion = (props) => {
             size="small">
             <div>
               <CopyToClipboard text={props.response}>
-                <i className="far fa-clipboard clipboard-icon push-right"></i>
-              </CopyToClipboard>  
+                <i className="far fa-clipboard clipboard-icon push-right" />
+              </CopyToClipboard>
             </div>
           </Tooltip>
           <div className="suggested-answer"><b><Anchor>Suggested reply</Anchor></b></div>
@@ -68,10 +68,10 @@ const Suggestion = (props) => {
         <div className="ticket-body">
           <Row><Col>
             {!expandAnswer && (
-              <Ellipsis onClick={() => setExpandAnswer(true)}>{props.response}</Ellipsis>     
+              <Ellipsis onClick={() => setExpandAnswer(true)}>{props.response}</Ellipsis>
             )}
             {expandAnswer && (
-              <Paragraph onClick={() => setExpandAnswer(false)}>{props.response}</Paragraph>     
+              <Paragraph onClick={() => setExpandAnswer(false)}>{props.response}</Paragraph>
             )}
           </Col></Row>
           <Row style={{marginTop: 10}}><Col><Anchor isExternal href={"https://app.exacctly.com/conversations/" + props.questionExacctlyId}>View on Exacctly</Anchor></Col></Row>

@@ -8,7 +8,7 @@ import { Dots } from '@zendeskgarden/react-loaders'
 import { PALETTE } from '@zendeskgarden/react-theming'
 import { Row, Col } from '@zendeskgarden/react-grid'
 import { buildUrl } from './utility'
-import { Alert, Title, Close } from '@zendeskgarden/react-notifications';
+import { Alert, Title } from '@zendeskgarden/react-notifications'
 
 const App = () => {
   const [suggestions, setSuggestions] = React.useState(null)
@@ -56,15 +56,26 @@ const App = () => {
         {error && (
           <Row>
             <Col>
-              <Alert type="error">      
-                <Title>Error</Title>      
-                <div dangerouslySetInnerHTML={{ __html: error }}></div>
+              <Alert type="error">
+                <Title>Error</Title>
+                <div dangerouslySetInnerHTML={{ __html: error }} />
               </Alert>
             </Col>
           </Row>
         )}
 
-        {suggestions && suggestions.length > 0 && (
+        {suggestions && !error && suggestions.length === 0 && (
+          <Row>
+            <Col>
+              <Alert type="info">
+                <Title>No Suggestions</Title>
+                No similar tickets have been found in your ticket log.
+              </Alert>
+            </Col>
+          </Row>
+        )}
+
+        {suggestions && suggestions.length > 0 && !error && (
           suggestions.map((suggestion) => {
             return <Suggestion
               question={suggestion.question.text}

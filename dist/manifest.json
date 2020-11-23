@@ -1,12 +1,12 @@
 {
-  "name": "Exacctly app",
+  "name": "Exacctly Zendesk Integration",
   "author": {
     "name": "Datasphera",
     "email": "contact@datasphera.com",
     "url": "https://www.datasphera.com"
   },
   "defaultLocale": "en",
-  "private": true,
+  "private": false,
   "location": {
     "support": {
       "ticket_sidebar": "assets/index.html"
@@ -23,6 +23,7 @@
       "name": "secretKey",
       "type": "text",
       "required": true,
+      "secure": true,
       "default": "datasphera-demo-key"
     }
   ],

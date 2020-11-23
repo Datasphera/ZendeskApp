@@ -2,6 +2,14 @@
   "app": {
     "name": "Exacctly Zendesk Integration",
     "similar_tickets": "Similar tickets:",
-    "suggested_reply": "Suggested reply"
+    "suggested_reply": "Suggested reply",
+    "short_description": "Annotate, automatically assign and analyze tickets with Exacctly.",
+    "installation_instructions": "- Our Zendesk integration requires both an Exacctly and a Zendesk account. To test out the integration in your Zendesk environment, you should create an account on our platform at [app.exacctly.com](https://app.exacctly.com) and link your Exacctly account to your Zendesk account.\n- Log in to your Zendesk account and install the Exacctly App from the Marketplace. Fill in the configuration form with the information you received after creating your Exacctly account.\n- Whenever you are viewing a Zendesk ticket, you can access Exacctly app from the Apps panel on the right side of the screen.\n- The Exacctly app will display similar tickets that you have previously received, along with their suggested responses. Pick the most suitable response and its content will be copied to your clipboard!",
+    "long_description": "Our customer support pipeline streamlining platform **Exacctly** is a cloud-based, AI-backed solution that will boost your support team's performance and increase your customers' satisfaction.\nOur platform provides you with an extensive set of useful tools such as:\n\n - Automatic annotation of incoming support tickets,\n- Automatic ticket assignment based on configurable rules,\n- Tailored response suggestions based on your agents' history,\n- Useful analytics to gauge your team's/customers' performance/satisfaction metrics.\n\nThe **Exacctly Zendesk Integration**  enables you to take advantage of our constantly evolving platform and reap all these benefits and more!",
+    "parameters": {
+      "platformUrl": { "label": "Platform URL", "helpText": "Leave it as default unless you have an On-premises package." },
+      "secretKey": { "label": "Secret Key", "helpText": "You can find your secret key at app.exacctly.com/integrations" }
+    }
   }
 }
+
