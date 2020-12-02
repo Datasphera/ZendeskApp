@@ -27,6 +27,7 @@ const App = () => {
 
     const settings = {
       url: buildUrl(platformUrl, data['ticket.id'], subdomain, secretKey),
+      secure: true,
       type: 'GET',
       contentType: 'application/json',
     }
