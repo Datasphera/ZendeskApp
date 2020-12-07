@@ -22,11 +22,10 @@ const App = () => {
     const data = await zafClient.get('ticket.id')
 
     const platformUrl = metadata.settings["platformUrl"]
-    const secretKey = metadata.settings["secretKey"]
     const subdomain = context.account.subdomain
 
     const settings = {
-      url: buildUrl(platformUrl, data['ticket.id'], subdomain, secretKey),
+      url: buildUrl(platformUrl, data['ticket.id'], subdomain, "{{setting.secretKey}}"),
       secure: true,
       type: 'GET',
       contentType: 'application/json',

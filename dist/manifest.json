@@ -12,6 +12,7 @@
       "ticket_sidebar": "assets/index.html"
     }
   },
+  "domainWhitelist": ["app.exacctly.com"],
   "parameters": [
     {
       "name": "platformUrl",
