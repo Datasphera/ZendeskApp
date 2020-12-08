@@ -25,10 +25,11 @@ const App = () => {
     const subdomain = context.account.subdomain
 
     const settings = {
-      url: buildUrl(platformUrl, data['ticket.id'], subdomain, "{{setting.secretKey}}"),
+      url: buildUrl(platformUrl, data['ticket.id'], subdomain, '{{setting.secretKey}}'),
       secure: true,
       type: 'GET',
       contentType: 'application/json',
+      cors: false,
     }
     zafClient.request(settings).then((res) => {
       setSuggestions(res)

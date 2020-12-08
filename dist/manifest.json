@@ -1,5 +1,5 @@
 {
-  "name": "Exacctly Zendesk Integration",
+  "name": "Exacctly",
   "author": {
     "name": "Datasphera",
     "email": "contact@datasphera.com",
@@ -12,7 +12,7 @@
       "ticket_sidebar": "assets/index.html"
     }
   },
-  "domainWhitelist": ["app.exacctly.com"],
+  "domainWhitelist": ["exacctly.com", "app.exacctly.com"],
   "parameters": [
     {
       "name": "platformUrl",
