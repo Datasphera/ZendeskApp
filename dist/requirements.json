@@ -1,0 +1,30 @@
+{
+  "targets": {
+    "exacctly_platform_target": {
+      "title": "Exacctly platform target",
+      "type": "http_target",
+      "target_url": "{{setting.platformUrl}}/inject/zendesk",
+      "method": "post",
+      "content_type": "application/json"
+    }
+  }, 
+  "triggers": {
+    "exacctly_send_ticket": {
+      "title": "Send ticket to Exacctly on creation or update",
+      "any": [{
+        "field": "update_type",
+        "operator": "is",
+        "value": "Create"
+      },
+      {
+        "field": "update_type",
+        "operator": "is",
+        "value": "Change"
+      }],
+      "actions": [{
+        "field": "notification_target",
+        "value": ["exacctly_platform_target", "{\"url\": \"{{ticket.url}}\",\"id\": \"{{ticket.id}}\",\"external_id\": \"{{ticket.external_id}}\"}"]
+      }]
+    }
+  }
+}
